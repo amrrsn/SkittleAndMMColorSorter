@@ -1,7 +1,7 @@
 # SkittleAndMMColorSorter
  These files are my final submission for a class project.
 
-I don't have the time to make this ReadMe look pretty, but if you wish to understand the workings of the code, the M&M code has many more comments and goes a bit more in depth about why I did things the way I did.
+I don't have the time to make this ReadMe look pretty, but if you wish to understand the workings of the code, the M&M code has many more comments than the Skittle's code and goes a bit more in depth about why I did things the way I did.
 
 The code currently is designed with these sub-circuits in mind:
 + Arduino Uno R3
