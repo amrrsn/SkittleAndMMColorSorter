@@ -15,4 +15,5 @@ In addition to that, this code was made with these libraries:
 Eventually I might upload the SolidWorks and/or DraftSight Files used to create the physical sorter, but those require some work before being uploaded to the internet.
 
 Thanks to the good folks over at: https://github.com/systembolaget/Physical-computing-sensor-servo-tutorial-6a-Colour-finder-with-ams-TCS34725-and-HD-1900A
+
 Their code may have sent me on many un-used rabbit holes, but it taught me a lot, and many of their comments and base code still remain.
