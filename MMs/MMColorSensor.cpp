@@ -69,14 +69,14 @@ const bool TESTING = false;   // Tag to enable/disable certain debug features.  
 // Instances a Servo object from the library and sets the sensing duration
 // (integration time) and sensitivity (gain); see library options. Longer
 // integration time plus lower gain = higher accuracy
-// Due to the 700MS integration time missing Skittles, I had to move it down to 154MS, I might need to go lower, but this is still in testing
+// Due to the 700MS integration time missing MMs, I had to move it down to 154MS, I might need to go lower, but this is still in testing
 // Moved to 101MS again
 // Testing 50MS
 Adafruit_TCS34725 colorSensor = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_101MS, TCS34725_GAIN_1X);
 
 // Servo Info: 0 degrees = 1500 microseconds; +90 degrees = 2000 microseconds; -90 degrees = 1000 microseconds
 // Instances a Servo object from the library
-Servo skittleServo;
+Servo mmServo;
 
 // For the compiler: isr() = function called when an interrupt occurs
 void isr()
@@ -375,12 +375,12 @@ void rotateServo()
       if (angleCurrent < angleTarget)
       {
         angleCurrent += angleInterval;
-        skittleServo.writeMicroseconds(angleCurrent);
+        mmServo.writeMicroseconds(angleCurrent);
       }
       else if (angleCurrent > angleTarget)
       {
         angleCurrent -= angleInterval;
-        skittleServo.writeMicroseconds(angleCurrent);
+        mmServo.writeMicroseconds(angleCurrent);
       }
     }
   }
@@ -450,10 +450,10 @@ void setup()
   Serial.begin(9600);
 
   // Initialises the servo; connect its signal wire to pin 3; sets the pulse width for the SG90 Servo we are using
-  skittleServo.attach(3, 500, 2400);
+  mmServo.attach(3, 500, 2400);
 
   // Rotates the servo to initial position (angle 0° in microseconds)
-  skittleServo.writeMicroseconds(1500);
+  mmServo.writeMicroseconds(1500);
 
   // Seed both with an initial value to start with something. All samples
   // are related to an angle expressed in microseconds, stored in the
